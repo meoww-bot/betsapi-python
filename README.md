@@ -3,6 +3,12 @@
 python SDK of betsapi.com.   
 betsapi.com is a excellent api for bet app.
 
+## install
+```
+pip install betsapi
+```
+only support python2.7 temporarily.
+
 ## docs
 
 https://betsapi.com/docs/
