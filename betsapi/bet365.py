@@ -124,7 +124,7 @@ class Bet365(BaseBetsAPI):
             
 
         req = requests.get(self._upcoming_events, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def prematch_odds(self,FI,raw=None):
         r"""Bet365 PreMatch Odds  
@@ -144,7 +144,7 @@ class Bet365(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._prematch_odds, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def result(self,event_id):
         r"""Bet365 Result  

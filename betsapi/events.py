@@ -9,20 +9,19 @@ class Events(BaseBetsAPI):
     r"""Events library.  
     """
 
-    v1_event = 'https://api.betsapi.com/v1/event'
-    v2_event = 'https://api.betsapi.com/v2/event'
-
-    v1_events = 'https://api.betsapi.com/v1/events'
-    v2_events = 'https://api.betsapi.com/v2/events'
-
-    v1_league = 'https://api.betsapi.com/v1/league'
-    v1_team = 'https://api.betsapi.com/v1/team'
-
     def __init__(self, token):
         self.token = token
 
         # English by default
         self.LNG_ID = '1' 
+        v1_event = 'https://api.betsapi.com/v1/event'
+        v2_event = 'https://api.betsapi.com/v2/event'
+
+        v1_events = 'https://api.betsapi.com/v1/events'
+        v2_events = 'https://api.betsapi.com/v2/events'
+
+        v1_league = 'https://api.betsapi.com/v1/league'
+        v1_team = 'https://api.betsapi.com/v1/team'
 
         self._inplay_events = self.build_uri(v1_events, 'inplay')
         self._upcoming_events = self.build_uri(v2_events, 'upcoming')
@@ -223,7 +222,7 @@ class Events(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._event_odds, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def event_stats_trend(self, event_id):
         r"""Event Stats Trend  
@@ -276,7 +275,7 @@ class Events(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._event_videos, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def league(self, sport_id, cc=None, page=None):
         r"""League
@@ -295,7 +294,7 @@ class Events(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._league, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def league_table(self, league_id):
         r"""League Table  
@@ -313,7 +312,7 @@ class Events(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._league_table, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def league_toplist(self, league_id):
         r"""League TopList  
@@ -352,7 +351,7 @@ class Events(BaseBetsAPI):
             params['LNG_ID'] = self.LNG_ID
 
         req = requests.get(self._team, params=params)
-        return json.loads(req.content)['results']
+        return json.loads(req.content)
 
     def team_squad(self, team_id):
         r"""Team Squad  
