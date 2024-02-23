@@ -18,10 +18,10 @@ setup(
     version=version,
     description='betsapi python SDK',
     author='meoww',
-    author_email='i@meoww.app',
+    author_email='admin@meow.page',
     install_requires=requires,
-    url='https://github.com/qwqmeow/betsapi-python',
-    download_url='https://github.com/qwqmeow/betsapi-python/releases',
+    url='https://github.com/meoww-bot/betsapi-python',
+    download_url='https://github.com/meoww-bot/betsapi-python/releases',
     keywords=['bet', 'api', 'odds'],
     classifiers=[],
 )
