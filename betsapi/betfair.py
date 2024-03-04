@@ -107,7 +107,7 @@ class Betfair(BaseBetsAPI):
         if self.LNG_ID:
             params['LNG_ID'] = self.LNG_ID
 
-        req = requests.get(self._sb_inplay, params=params)
+        req = requests.get(self._ex_inplay, params=params)
         return json.loads(req.content)
 
     def ex_upcoming(self, sport_id=None,day=None,page=None):
@@ -131,7 +131,7 @@ class Betfair(BaseBetsAPI):
         if self.LNG_ID:
             params['LNG_ID'] = self.LNG_ID
 
-        req = requests.get(self._sb_inplay, params=params)
+        req = requests.get(self._ex_upcoming, params=params)
         return json.loads(req.content)
 
     def ex_event(self, event_id):
@@ -147,7 +147,7 @@ class Betfair(BaseBetsAPI):
         if self.LNG_ID:
             params['LNG_ID'] = self.LNG_ID
 
-        req = requests.get(self._sb_inplay, params=params)
+        req = requests.get(self._ex_event, params=params)
         return json.loads(req.content)
 
     def timeline(self,event_id):
